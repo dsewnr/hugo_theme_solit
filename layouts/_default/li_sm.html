@@ -1,4 +1,10 @@
 <article class="li sm article-{{ .Source.Path | md5 }}">
+	{{ if ".Params.thumbnail" "!=" nil }}
+		<style amp-custom>
+			.article-{{ .Source.Path | md5   }} .thumbnail{ background-image: url({{ .Params.thumbnail   }});  }
+		</style>
+
+	{{ end }}
   <div class="content-inner">
     <header class="article-header">
       <div class="clearfix">
